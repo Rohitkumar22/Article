@@ -1,0 +1,50 @@
+.container {
+  max-width: 740px;
+  color: rgb(178, 178, 225);
+
+  width: 100%;
+  margin: auto;
+  padding: 5vh;
+}
+.form-header {
+  font-size: 30px;
+  text-align: center;
+}
+.form-body {
+  height: 50vh;
+  background-color: rgb(246, 246, 246);
+  box-shadow: #d3d3d3 5px 5px 50px;
+  margin: 2vh 20vw;
+  padding: 5vh 5vw;
+}
+.form-body-row {
+  background-color: rgb(242, 242, 242);
+  margin: 4vh 0;
+
+  border-top: 1px solid lightgray;
+}
+.form-body-row-input-field {
+  border: none;
+  width: 100%;
+  padding: 1vh;
+}
+
+.form-button {
+  display: block;
+  width: 100%;
+  height: 10%;
+}
+.loginButton {
+  background-color: rgb(0, 140, 52);
+  margin: 7vh 20% 1vh 20%;
+  padding: 1vh;
+  text-align: center;
+  color: white;
+}
+.registerButton {
+  padding: 0;
+  margin: 0;
+  background-color: aliceblue;
+  text-align: center;
+  color: rgb(9, 184, 73);
+}
