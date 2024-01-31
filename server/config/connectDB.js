@@ -9,6 +9,7 @@ const connectDB = async () => {
     );
   } catch (e) {
     console.log(`DB connection issue`);
+    console.log(`${e}`);
   }
 };
 export default connectDB;
