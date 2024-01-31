@@ -8,7 +8,7 @@ const connectDB = async () => {
       `connection establised with ${mongoose.connection.host} dbname ${mongoose.connection.db.databaseName}`
     );
   } catch (e) {
-    console.log(`DB connection issue`);
+    console.log(`DB connection issue \n${e}`);
   }
 };
 export default connectDB;
