@@ -1,7 +1,7 @@
-import express from "express";
+import express, { response } from "express";
 import loginController from "../Controller/loginController.js";
 import SignupController from "../Controller/SignupController.js";
-
+import jwt from "jsonwebtoken";
 const router = express.Router();
 
 //Login Route
