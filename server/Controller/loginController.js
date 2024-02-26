@@ -4,17 +4,14 @@ import jwt from "jsonwebtoken";
 
 const loginController = async (req, res) => {
   const { email, password } = req.body;
-
   try {
     const user = await userModel.findOne({ email: email });
-
     if (!user) {
       res
         .status(404)
         .send({ success: false, message: "User not registered", data: null });
     }
     const passwordmatch = await bcrypt.compare(password, user.password);
-
     if (!passwordmatch) {
       res
         .status(200)
@@ -34,5 +31,4 @@ const loginController = async (req, res) => {
     });
   }
 };
-
 export default loginController;

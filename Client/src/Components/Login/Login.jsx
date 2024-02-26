@@ -3,13 +3,24 @@ import "./Login.css";
 import { Link } from "react-router-dom";
 
 function Login() {
-  const handleSubmit = () => {
-    console.log(email);
-    console.log(Password);
-  };
-
   const [email, setemail] = useState("");
   const [Password, setPassword] = useState("");
+
+  const handleSubmit = () => {
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: email, password: Password }),
+    };
+    console.log(requestOptions);
+
+    fetch("http://localhost:8000/user/login", requestOptions)
+      .then((response) => response.json())
+      .then((res) => {
+        console.log(res);
+      });
+  };
+
   return (
     <>
       <div className="container">
