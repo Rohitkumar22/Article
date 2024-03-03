@@ -1,24 +1,29 @@
 import { useState } from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
   const [email, setemail] = useState("");
   const [Password, setPassword] = useState("");
-
-  const handleSubmit = () => {
+  const navigate = useNavigate();
+  const handleSubmit = async () => {
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email: email, password: Password }),
     };
-    console.log(requestOptions);
-
-    fetch("http://localhost:8000/user/login", requestOptions)
-      .then((response) => response.json())
-      .then((res) => {
-        console.log(res);
-      });
+    try {
+      const request = await fetch(
+        "http://localhost:8000/user/login",
+        requestOptions
+      );
+      const data = await request.json();
+      console.log(data.token);
+      sessionStorage.setItem("token", data.token);
+      navigate("/profile");
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
