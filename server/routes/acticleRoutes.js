@@ -6,7 +6,7 @@ import SignupController from "../Controller/SignupController.js";
 const router = express.Router();
 
 //Login Route
-router.post("/login", loginController);
+router.post("/create", createpost);
 
 //SignUp Route
 router.post("/Signup", SignupController);

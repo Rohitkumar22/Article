@@ -18,10 +18,26 @@ const loginController = async (req, res) => {
         .status({ success: false, message: "Wrong password", data: null });
     } else {
       const token = await jwt.sign({ id: user._id }, "Mysecreatkey", {
-        expiresIn: "30d",
+        expiresIn: "3h",
       });
-      console.log("token", token);
-      res.send({ success: true, message: "Log in Successfully", data: token });
+      const refreshtoken = await jwt.sign(
+        { id: user._id, email: email },
+        "Mysecreatkey",
+        { expiresIn: "7d" }
+      );
+
+      res.cookie("refreshToken", refreshtoken, {
+        secure: true, // Set to true if using HTTPS
+        httpOnly: true,
+        sameSite: "strict", // Adjust to your requirements
+      });
+
+      res.send({
+        success: true,
+        message: "Log in Successfully",
+        token: token,
+        refreshtoken: refreshtoken,
+      });
     }
   } catch (err) {
     res.status(500).send({
