@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
 const ProtectedRoutes = (prop) => {
-  const tokenexist = sessionStorage.getItem("jwtToken");
+  const tokenexist = sessionStorage.getItem("token");
   console.log(tokenexist);
   if (tokenexist) {
     return prop.children;
