@@ -18,7 +18,7 @@ function Login() {
         requestOptions
       );
       const data = await request.json();
-      console.log(data.token);
+
       sessionStorage.setItem("token", data.token);
       navigate("/profile");
     } catch (err) {
