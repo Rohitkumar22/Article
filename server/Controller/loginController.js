@@ -17,7 +17,7 @@ const loginController = async (req, res) => {
         .status(200)
         .status({ success: false, message: "Wrong password", data: null });
     } else {
-      const token = await jwt.sign({ id: user._id }, "Mysecreatkey", {
+      const token = await jwt.sign({ id: user._id }, process.env.SECRET_TOKEN, {
         expiresIn: "3h",
       });
       const refreshtoken = await jwt.sign(
