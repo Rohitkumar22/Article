@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import User from "./userModel";
 
 const articleSchema = mongoose.Schema({
   title: {
@@ -9,6 +10,10 @@ const articleSchema = mongoose.Schema({
     type: String,
     required: true,
     maxlength: 75,
+  },
+  createdBy: {
+    type: mongoose.Schema.Types.ObjectID,
+    ref: User,
   },
 });
 

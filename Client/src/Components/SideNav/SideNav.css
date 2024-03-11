@@ -1,0 +1,14 @@
+.SideContainerLeft {
+  position: absolute;
+  left: 3px;
+  height: 100vh;
+  width: 15%;
+  background: rgb(247, 243, 243);
+}
+.ProfilePicContainer {
+  position: relative;
+  margin: 10% 5%;
+  color: rgb(221, 240, 240);
+  height: 25%;
+  width: 100%;
+}

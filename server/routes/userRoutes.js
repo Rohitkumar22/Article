@@ -12,6 +12,4 @@ router.post("/login", loginController);
 //SignUp Route
 router.post("/signup", SignupController);
 
-router.post("/create", authmiddleware, createPostController);
-
 export default router;

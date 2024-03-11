@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
 app.use("/user", userRoutes);
 
 // //user Article
-// app.use("acticle", articleRoutes);
+app.use("/dashboard", articleRoutes);
 
 app.listen(8000, () => {
   console.log("server is running");

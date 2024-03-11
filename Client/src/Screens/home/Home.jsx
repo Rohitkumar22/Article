@@ -1,8 +1,9 @@
-import Navbar from "../../Components/Navbar/Navbar";
+// import Navbar from "../../Components/Navbar/Navbar";
+import SideNav from "../../Components/SideNav/SideNav";
 function Home() {
   return (
     <>
-      <Navbar />
+      <SideNav />
     </>
   );
 }

@@ -1,5 +1,3 @@
-const createPostController = (req, res) => {
-  res.send("post created");
-};
+const createPostController = (req, res) => {};
 
 export default createPostController;
